@@ -1,3 +1,4 @@
+import { Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MEDIA } from "@/lib/data";
@@ -22,13 +23,26 @@ export function MediaPlayers() {
             {videos.map((v) => (
               <div key={v.id}>
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-black">
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={`https://www.youtube.com/embed/${v.src}`}
-                    title={v.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  {v.src ? (
+                    // Real video — embed it. (src must be just the YouTube ID.)
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={`https://www.youtube.com/embed/${v.src}`}
+                      title={v.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    // No video yet — show a placeholder instead of a broken embed.
+                    <div className="grain absolute inset-0 flex flex-col items-center justify-center gap-3 bg-charcoal text-center">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 text-gold">
+                        <Play size={22} className="ml-1" />
+                      </span>
+                      <p className="font-mono text-xs uppercase tracking-[0.3em] text-mist">
+                        Reel coming soon
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <p className="mt-3 font-serif text-xl text-cream">{v.title}</p>
                 {v.description && (

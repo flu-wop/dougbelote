@@ -197,7 +197,10 @@ export const MEDIA: MediaItem[] = [
     id: "m1",
     type: "video",
     title: "Performance Reel",
-    src: "JgqTdAVGwUc", // TODO: replace with Doug's reel YouTube ID
+    // Leave src as "" to show a "coming soon" placeholder. When Doug's
+    // reel (or a trailer) is ready, paste ONLY the YouTube video ID here
+    // — e.g. for https://youtu.be/abc123XYZ  →  src: "abc123XYZ".
+    src: "",
     description: "A short cut of recent live and studio performances.",
   },
   {
