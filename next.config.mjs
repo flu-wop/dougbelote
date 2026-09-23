@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ["@flu-wop/design-system"],
   images: {
     // Placeholder image hosts. Remove these once Doug's real photos
     // live in /public/images and are referenced locally.

@@ -11,22 +11,13 @@ import type { Config } from "tailwindcss";
  *   as a large fill, so the site still reads as part of the family.
  */
 const config: Config = {
+  // Brand colours, fonts and semantic tokens come from the shared IN-FLU-ENTIAL preset.
+  presets: [require("@flu-wop/design-system/tailwind-preset")],
   darkMode: "class",
-  content: ["./src/**/*.{ts,tsx,mdx}"],
+  content: ["./src/**/*.{ts,tsx,mdx}", "./node_modules/@flu-wop/design-system/src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // --- Shared ecosystem palette ---
-        "studio-black": "#090909",
-        charcoal: "#111111",
-        dark: "#1A1A1A",
-        card: "#1C1C1C",
-        border: "#2A2A2A",
-        gold: "#D4AF77",
-        "gold-light": "#E8C97A",
-        "gold-dark": "#B8935A",
-        cream: "#F5EDD8",
-        mist: "#A89880",
         // --- dougbelote.com accent layer ---
         "nola-red": "#8E2A2A",
         "nola-red-light": "#B5413A",
