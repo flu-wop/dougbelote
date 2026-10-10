@@ -92,6 +92,10 @@ export function Footer() {
           <p className="font-mono uppercase tracking-[0.2em]">
             {SITE.city}
           </p>
+          <p>
+            Designed by{" "}
+            <a href="https://in-flu-ential.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gold transition-colors hover:text-cream">IN-FLU-ENTIAL</a>
+          </p>
         </div>
       </div>
     </footer>
