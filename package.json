@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@flu-wop/design-system": "github:flu-wop/design-system#v0.4.0",
+    "@flu-wop/design-system": "github:flu-wop/design-system#071e32eaaba5acb6a407996ea9faf0b78b9d7293",
     "clsx": "^2.1.1",
     "lucide-react": "^0.460.0",
     "next": "16.2.6",
