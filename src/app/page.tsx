@@ -1,21 +1,25 @@
 import { Hero } from "@/components/sections/hero";
-import { NewsReel } from "@/components/sections/news-reel";
+import { StatBand } from "@/components/sections/stat-band";
+import { StreetBeatFeature } from "@/components/sections/street-beat-feature";
+import { ArtistsWall } from "@/components/sections/artists-wall";
 import { BookingCTA } from "@/components/sections/booking-cta";
 
 /**
- * Home page (/) — the cinematic opener.
- * Composition only: each block is its own component so you can reorder,
- * remove, or restyle without touching the others.
+ * Home page (/) — composition only; each block is its own component.
  *
- *   1. Hero        — portrait + tagline + dual CTA
- *   2. NewsReel    — latest news cards + reel teaser → /media
- *   3. BookingCTA  — warm call-to-action band → /contact
+ *   1. Hero              — studio photo, headline, dual CTA
+ *   2. StatBand          — three headline numbers
+ *   3. StreetBeatFeature — documentary crosslink
+ *   4. ArtistsWall       — selected collaborators → /credits
+ *   5. BookingCTA        — call-to-action band → /contact
  */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <NewsReel />
+      <StatBand />
+      <StreetBeatFeature />
+      <ArtistsWall />
       <BookingCTA />
     </>
   );

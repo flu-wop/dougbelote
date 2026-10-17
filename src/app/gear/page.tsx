@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Gear" };
  */
 export default function GearPage() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-28 pt-20 sm:px-8">
+    <section className="mx-auto max-w-6xl px-6 pb-28 pt-20">
       <SectionHeading
         eyebrow="Setup & Endorsements"
         title="What's behind the kit"

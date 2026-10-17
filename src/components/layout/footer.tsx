@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Youtube, Music2 } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/data";
 import { Separator } from "@/components/ui/separator";
 
@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border bg-charcoal">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+      <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
@@ -51,7 +51,7 @@ export function Footer() {
             >
               {SITE.email}
             </a>
-            <div className="mt-5 flex gap-4">
+            <div className="mt-5 flex items-center gap-4">
               <a
                 href={SITE.socials.instagram}
                 aria-label="Instagram"
@@ -62,22 +62,12 @@ export function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href={SITE.socials.youtube}
-                aria-label="YouTube"
-                className="text-mist transition-colors hover:text-gold"
+                href="https://streetbeat.video"
+                className="text-sm text-mist transition-colors hover:text-gold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Youtube size={20} />
-              </a>
-              <a
-                href={SITE.socials.spotify}
-                aria-label="Spotify"
-                className="text-mist transition-colors hover:text-gold"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Music2 size={20} />
+                Street Beat
               </a>
             </div>
           </div>

@@ -4,60 +4,53 @@ import { Button } from "@/components/ui/button";
 import { SITE, IMAGES } from "@/lib/data";
 
 /**
- * Hero — full-viewport cinematic opener.
- * Strong portrait, gold-gradient headline, dual CTA (Booking + Media).
- * Swap IMAGES.hero in src/lib/data.ts for Doug's real portrait
- * (ideally a tall/portrait crop, 1600px+ wide, dark or moody lighting).
+ * Hero — split layout matching the DJM / MCS openers: eyebrow chip,
+ * serif headline with an italic gold phrase, dual CTA, and a framed
+ * studio photo. Swap IMAGES.hero in src/lib/data.ts for a higher-res
+ * original when available (1600px+ wide).
  */
 export function Hero() {
   return (
-    <section className="relative grain vignette min-h-[92vh] overflow-hidden">
-      {/* Background portrait */}
-      <div className="absolute inset-0">
-        <Image
-          src={IMAGES.hero}
-          alt={`${SITE.name} — ${SITE.role}`}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-50"
-        />
-        {/* Gradient washes to keep text legible and on-brand */}
-        <div className="absolute inset-0 bg-gradient-to-t from-studio-black via-studio-black/60 to-studio-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-studio-black/80 to-transparent" />
-      </div>
+    <section className="grain vignette relative overflow-hidden border-b border-border/40 bg-charcoal">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.05fr_1fr] md:py-28">
+        <div className="min-w-0 space-y-6">
+          <span className="inline-block animate-fade-up border border-gold/50 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+            {SITE.city} · {SITE.role}
+          </span>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-5 sm:px-8">
-        <p className="eyebrow mb-5 animate-fade-up">
-          {SITE.city} · {SITE.role}
-        </p>
+          <h1 className="animate-fade-up text-5xl leading-[1.05] text-cream sm:text-6xl md:text-7xl">
+            {SITE.heroLead}
+            <br />
+            <span className="text-gold-gradient italic">{SITE.heroEmphasis}</span>
+          </h1>
 
-        <h1 className="max-w-3xl animate-fade-up text-5xl leading-[1.05] sm:text-6xl md:text-7xl">
-          <span className="text-gold-gradient">{SITE.heroHeadline}</span>
-        </h1>
+          <p className="max-w-md animate-fade-up text-base leading-relaxed text-mist">
+            {SITE.heroSub}
+          </p>
 
-        <p className="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-cream/80">
-          {SITE.heroSub}
-        </p>
-
-        <div className="mt-10 flex animate-fade-up flex-col gap-4 sm:flex-row">
-          <Link href="/contact">
-            <Button size="lg" className="w-full sm:w-auto">
-              Book Doug
-            </Button>
-          </Link>
-          <Link href="/media">
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              Watch the reel
-            </Button>
-          </Link>
+          <div className="flex animate-fade-up flex-wrap gap-3 pt-2">
+            <Link href="/contact">
+              <Button size="lg">Book Doug</Button>
+            </Link>
+            <Link href="/media">
+              <Button variant="outline" size="lg">
+                Watch the trailer
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-mist">
-        Scroll
+        <div className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-sm border border-border">
+          <Image
+            src={IMAGES.hero}
+            alt={`${SITE.name} tracking drums in the studio`}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-studio-black/40 via-transparent to-transparent" />
+        </div>
       </div>
     </section>
   );

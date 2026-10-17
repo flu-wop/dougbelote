@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "Media" };
  */
 export default function MediaPage() {
   return (
-    <section className="mx-auto max-w-5xl px-5 pb-28 pt-20 sm:px-8">
+    <section className="mx-auto max-w-6xl px-6 pb-28 pt-20">
       <SectionHeading
         eyebrow="Watch & Listen"
         title="Media"

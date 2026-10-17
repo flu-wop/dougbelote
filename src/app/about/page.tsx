@@ -14,12 +14,12 @@ export const metadata: Metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 pb-24 pt-20 sm:px-8">
+      <section className="mx-auto max-w-6xl px-6 pb-24 pt-20">
         <SectionHeading eyebrow="About" title={SITE.name} />
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           {/* Portrait */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border">
             <Image
               src={IMAGES.aboutPortrait}
               alt={`${SITE.name} portrait`}

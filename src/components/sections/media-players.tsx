@@ -22,7 +22,7 @@ export function MediaPlayers() {
           <div className="space-y-8">
             {videos.map((v) => (
               <div key={v.id}>
-                <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-black">
+                <div className="relative aspect-video overflow-hidden rounded-sm border border-border bg-black">
                   {v.src ? (
                     // Real video — embed it. (src must be just the YouTube ID.)
                     <iframe

@@ -2,12 +2,10 @@
  * ╔══════════════════════════════════════════════════════════════════╗
  * ║  dougbelote.com — ALL EDITABLE CONTENT LIVES HERE                  ║
  * ║                                                                    ║
- * ║  This is the single source of truth for site copy and data.       ║
- * ║  When Doug sends real bio text, the full credits list, gear, and   ║
- * ║  media links, swap them in HERE and every page updates itself.     ║
- * ║                                                                    ║
- * ║  Images: replace the placeholder URLs with local paths like        ║
- * ║  "/images/doug-hero.jpg" after dropping files into /public/images. ║
+ * ║  Single source of truth for site copy and data. Every credit,      ║
+ * ║  gear item and bio line below is drawn from public sources (his    ║
+ * ║  Yamaha artist page, interviews, the Street Beat film site).       ║
+ * ║  Anything unconfirmed is marked TODO — confirm with Doug first.    ║
  * ╚══════════════════════════════════════════════════════════════════╝
  */
 
@@ -16,7 +14,6 @@ import type {
   Credit,
   GearItem,
   MediaItem,
-  NewsItem,
 } from "@/types";
 
 /* ───────────────────────────── SITE META ───────────────────────────── */
@@ -25,17 +22,16 @@ export const SITE = {
   name: "Doug Belote",
   role: "Drummer · Percussionist",
   /** Used in <title>, OG tags, footer. */
-  tagline: "World-class New Orleans drummer & touring percussionist",
-  /** Hero headline + sub. Edit freely. */
-  heroHeadline: "The pulse behind the players.",
+  tagline: "New Orleans drummer, touring with Jerry Douglas and host of Street Beat",
+  /** Hero headline — second part renders in italic gold. */
+  heroLead: "The groove lives",
+  heroEmphasis: "in the cracks.",
   heroSub:
-    "New Orleans–born drummer and percussionist with credits spanning Jerry Douglas, Dr. John, Robben Ford, and a generation of records that move people.",
-  email: "booking@dougbelote.com", // TODO: confirm real address
+    "Raised in Lafayette, based in New Orleans. Touring drummer with Jerry Douglas, with sessions alongside Willie Nelson, Sonny Landreth, Dr. John and a hundred-plus albums.",
+  email: "booking@dougbelote.com", // TODO: confirm real address with Doug
   city: "New Orleans, LA",
   socials: {
-    instagram: "https://instagram.com/", // TODO
-    youtube: "https://youtube.com/", // TODO
-    spotify: "https://open.spotify.com/", // TODO
+    instagram: "https://www.instagram.com/dougbelote/",
   },
 } as const;
 
@@ -51,187 +47,169 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 /* ───────────────────────────── IMAGES ──────────────────────────────── */
-/* Swap these for local /images/*.jpg paths once real photos arrive.     */
 
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=1600&auto=format&fit=crop",
-  aboutPortrait:
-    "https://images.unsplash.com/photo-1571327073757-71d13c24de30?q=80&w=1200&auto=format&fit=crop",
-  reelPoster:
-    "https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?q=80&w=1600&auto=format&fit=crop",
-  // Generic warm placeholder for credit/gear cards without their own art:
-  cardFallback:
-    "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?q=80&w=800&auto=format&fit=crop",
+  hero: "/images/doug-hero.jpg",
+  aboutPortrait: "/images/doug-portrait.jpg",
+  streetBeatPoster: "/images/streetbeat-poster.jpg",
 } as const;
 
-/* ──────────────────────── HOME: LATEST NEWS ────────────────────────── */
+/* ───────────────────────── STREET BEAT FEATURE ─────────────────────── */
 
-export const NEWS: NewsItem[] = [
-  {
-    id: "n1",
-    date: "2025",
-    title: "In the studio this season",
-    blurb:
-      "Tracking sessions across New Orleans and Nashville. New record dates announced soon.",
-  },
-  {
-    id: "n2",
-    date: "2025",
-    title: "On the road",
-    blurb:
-      "Selected touring dates with longtime collaborators. Routing posted on the booking page.",
-  },
-  {
-    id: "n3",
-    date: "2025",
-    title: "New reel",
-    blurb: "A fresh performance reel is up on the Media page — give it a spin.",
-  },
-];
+export const STREET_BEAT = {
+  title: "Street Beat",
+  subtitle: "Drumming Below Sea Level",
+  blurb:
+    "A 54-minute documentary on the New Orleans drum sound, hosted by Doug and produced by Mid City Sound and Fire on the Bayou.",
+  url: "https://streetbeat.video",
+  trailerId: "UHDD6J1j5r0",
+} as const;
 
 /* ───────────────────────────── CREDITS ─────────────────────────────── */
-/* Placeholder list. The names below are real collaborators Doug is       */
-/* associated with; confirm exact projects/years before publishing.       */
+/* Sources: Yamaha artist bio, Drum Click & Banjo Studio interviews,      */
+/* Troubled Men Podcast, Illinois Entertainer. Add project/year when      */
+/* Doug confirms them.                                                    */
+
+const SESSION_ARTISTS = [
+  "Willie Nelson",
+  "Dr. John",
+  "Anders Osborne",
+  "George Porter Jr.",
+  "Derek Trucks",
+  "Charlie Hunter",
+  "Robben Ford",
+  "John Oates",
+  "Mike Gordon",
+  "Jeff Coffin",
+  "Henry Butler",
+  "Delfeayo Marsalis",
+  "Cyril Neville",
+  "Ivan Neville",
+  "Clarence “Gatemouth” Brown",
+  "Allen Toussaint",
+  "Fred Wesley",
+  "Steve Masakowski",
+  "Alison Krauss",
+  "Bobby Rush",
+];
 
 export const CREDITS: Credit[] = [
   {
-    id: "c1",
+    id: "jerry-douglas",
     artist: "Jerry Douglas",
-    role: "Drums / Percussion",
-    project: "Studio & touring",
+    role: "Drums",
+    project: "Jerry Douglas Band",
     category: "Touring",
   },
   {
-    id: "c2",
-    artist: "Dr. John",
+    id: "sonny-landreth",
+    artist: "Sonny Landreth",
     role: "Drums",
-    project: "Session work",
-    category: "Studio",
+    project: "Crossroads Guitar Festival, 2010 — alongside Eric Clapton",
+    year: 2010,
+    category: "Session",
   },
+  ...SESSION_ARTISTS.map<Credit>((artist) => ({
+    id: artist.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+    artist,
+    role: "Drums",
+    category: "Session",
+  })),
   {
-    id: "c3",
-    artist: "Robben Ford",
+    id: "tv-film",
+    artist: "Film, TV & commercials",
     role: "Drums / Percussion",
-    project: "Album & live",
-    category: "Touring",
-  },
-  {
-    id: "c4",
-    artist: "Placeholder Artist",
-    role: "Drums",
-    project: "Album Title (TBD)",
-    year: 2023,
-    category: "Studio",
-  },
-  {
-    id: "c5",
-    artist: "Placeholder Artist",
-    role: "Percussion",
-    project: "Film Score (TBD)",
+    project: "Recorded in New Orleans & Nashville",
     category: "Film/TV",
   },
   {
-    id: "c6",
-    artist: "Placeholder Artist",
-    role: "Session Drums",
-    project: "Single (TBD)",
-    category: "Session",
+    id: "street-beat",
+    artist: "Street Beat: Drumming Below Sea Level",
+    role: "Host",
+    project: "Documentary film",
+    year: 2025,
+    category: "Film/TV",
   },
 ];
 
+/** Names shown in the home-page artist wall (touring + selected sessions). */
+export const WALL_ARTISTS: string[] = [
+  "Jerry Douglas",
+  "Willie Nelson",
+  "Sonny Landreth",
+  "Dr. John",
+  "Anders Osborne",
+  "George Porter Jr.",
+  "Derek Trucks",
+  "Charlie Hunter",
+  "Robben Ford",
+  "John Oates",
+  "Allen Toussaint",
+  "Cyril Neville",
+  "Henry Butler",
+  "Alison Krauss",
+];
+
 /* ────────────────────────────── GEAR ───────────────────────────────── */
-/* Confirm exact endorsements before publishing — these are placeholders. */
+/* Endorsements per Doug's Yamaha artist page.                            */
 
 export const GEAR: GearItem[] = [
   {
-    id: "g1",
+    id: "yamaha",
     brand: "Yamaha",
-    model: "Recording Custom (placeholder)",
+    model: "Absolute Hybrid Maple drum set",
     category: "Drums",
-    note: "Workhorse studio kit — warm, focused tone.",
     endorsed: true,
   },
   {
-    id: "g2",
+    id: "zildjian",
     brand: "Zildjian",
-    model: "K Series (placeholder)",
+    model: "Cymbals",
     category: "Cymbals",
-    note: "Dark, dry, expressive — built for the room.",
     endorsed: true,
   },
   {
-    id: "g3",
-    brand: "Remo",
-    model: "Coated Heads (placeholder)",
-    category: "Heads",
-    note: "Go-to heads for tracking.",
-  },
-  {
-    id: "g4",
-    brand: "Vic Firth",
-    model: "Signature Sticks (placeholder)",
+    id: "promark",
+    brand: "Pro-Mark",
+    model: "Drumsticks",
     category: "Sticks",
-    note: "Balanced feel for sessions and stages.",
+    endorsed: true,
   },
   {
-    id: "g5",
-    brand: "DW",
-    model: "Hardware & Pedals (placeholder)",
-    category: "Hardware",
-    note: "Rock-solid foundation under the kit.",
-  },
-  {
-    id: "g6",
-    brand: "LP",
-    model: "Percussion (placeholder)",
-    category: "Percussion",
-    note: "Auxiliary percussion for color and NOLA flavor.",
+    id: "shure",
+    brand: "Shure",
+    model: "In-ear monitors",
+    category: "Monitoring",
+    endorsed: true,
   },
 ];
 
 /* ────────────────────────────── MEDIA ──────────────────────────────── */
-/* Video: use the YouTube/Vimeo ID. Audio: drop files in /public/audio.   */
+/* Video: YouTube video ID only. Audio: drop files in /public/audio.      */
 
 export const MEDIA: MediaItem[] = [
   {
-    id: "m1",
+    id: "street-beat-trailer",
     type: "video",
-    title: "Performance Reel",
-    // Leave src as "" to show a "coming soon" placeholder. When Doug's
-    // reel (or a trailer) is ready, paste ONLY the YouTube video ID here
-    // — e.g. for https://youtu.be/abc123XYZ  →  src: "abc123XYZ".
-    src: "",
-    description: "A short cut of recent live and studio performances.",
-  },
-  {
-    id: "m2",
-    type: "audio",
-    title: "Studio Clip — Track 1",
-    src: "/audio/clip-1.mp3", // TODO: add file to /public/audio
-    description: "Placeholder studio clip.",
-  },
-  {
-    id: "m3",
-    type: "audio",
-    title: "Studio Clip — Track 2",
-    src: "/audio/clip-2.mp3", // TODO: add file to /public/audio
-    description: "Placeholder studio clip.",
+    title: "Street Beat — Official Trailer",
+    src: STREET_BEAT.trailerId,
+    description:
+      "Doug hosts this 54-minute documentary on the New Orleans drum sound.",
   },
 ];
 
 /* ────────────────────────────── ABOUT ──────────────────────────────── */
 
 export const ABOUT = {
-  /** Each string is a paragraph. Replace with Doug's real bio. */
   paragraphs: [
-    "Doug Belote is a New Orleans drummer and percussionist whose playing has anchored studio sessions and stages around the world. [Placeholder bio — replace with Doug's real story.]",
-    "Rooted in the deep rhythmic tradition of New Orleans, his feel moves easily between roots, blues, Americana, and beyond — the kind of player other musicians call when the song has to breathe. [Placeholder.]",
-    "Over the years his work has carried him alongside artists including Jerry Douglas, Dr. John, and Robben Ford, with a discography that keeps growing. [Placeholder — add highlights, schooling, influences, gear philosophy, etc.]",
+    "Doug Belote grew up in Lafayette, in the heart of Cajun country, surrounded by jazz, funk, R&B, zydeco, gospel and second-line rhythm. He started drumming at twelve and was working clubs and recording sessions before he finished high school.",
+    "After a single semester at the University of Louisiana at Lafayette, he sold nearly everything he owned, drums included, and moved to New York to study at the Drummers Collective with Ricky Sebastian and Kim Plainfield. Back in Louisiana he learned New Orleans music with Johnny Vidacovich.",
+    "Today he lives in New Orleans and tours with dobro master Jerry Douglas, recording albums, TV commercials and film soundtracks between New Orleans and Nashville. He has played on more than a hundred albums, including sessions with Willie Nelson, Sonny Landreth, Dr. John, Anders Osborne, George Porter Jr. and Derek Trucks.",
+    "He also hosted Street Beat: Drumming Below Sea Level, a documentary on the New Orleans drum sound, produced by Mid City Sound and Fire on the Bayou.",
   ],
-  /** Small stat blocks under the bio. Edit numbers/labels freely. */
   stats: [
-    { value: "25+", label: "Years playing" },
-    { value: "100+", label: "Records & sessions" },
-    { value: "∞", label: "Miles toured" },
+    { value: "100+", label: "Albums recorded" },
+    { value: "12", label: "Age he picked up drums" },
+    { value: "54 min", label: "Street Beat, hosted" },
   ],
 } as const;

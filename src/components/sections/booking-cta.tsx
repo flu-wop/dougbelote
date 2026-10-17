@@ -14,7 +14,7 @@ export function BookingCTA() {
         <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-nola-red/30 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl px-5 py-24 text-center sm:px-8">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
         <p className="eyebrow mb-4">Sessions · Tours · One-offs</p>
         <h2 className="text-4xl leading-tight text-cream sm:text-5xl">
           Let&apos;s make the track <span className="text-gold-gradient">breathe.</span>

@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     url: "https://dougbelote.com",
     siteName: SITE.name,
     type: "website",
-    // TODO: add /public/images/og-image.jpg (1200×630) once available
-    // images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.role}`,
     description: SITE.tagline,
+    images: ["/images/og-image.jpg"],
   },
 };
 

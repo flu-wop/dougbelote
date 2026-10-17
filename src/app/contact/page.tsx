@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "Booking" };
  */
 export default function ContactPage() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-28 pt-20 sm:px-8">
+    <section className="mx-auto max-w-6xl px-6 pb-28 pt-20">
       <SectionHeading
         eyebrow="Booking"
         title="Let's work together"
