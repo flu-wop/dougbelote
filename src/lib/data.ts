@@ -52,6 +52,7 @@ export const IMAGES = {
   hero: "/images/doug-hero.jpg",
   aboutPortrait: "/images/doug-portrait.jpg",
   streetBeatPoster: "/images/streetbeat-poster.jpg",
+  withGaryPaczosa: "/images/doug-gary-paczosa.jpg",
 } as const;
 
 /* ───────────────────────── STREET BEAT FEATURE ─────────────────────── */
