@@ -52,7 +52,6 @@ export const IMAGES = {
   hero: "/images/doug-hero.jpg",
   aboutPortrait: "/images/doug-portrait.jpg",
   streetBeatPoster: "/images/streetbeat-poster.jpg",
-  withGaryPaczosa: "/images/doug-gary-paczosa.jpg",
 } as const;
 
 /* ───────────────────────── STREET BEAT FEATURE ─────────────────────── */
@@ -207,10 +206,5 @@ export const ABOUT = {
     "After a single semester at the University of Louisiana at Lafayette, he sold nearly everything he owned, drums included, and moved to New York to study at the Drummers Collective with Ricky Sebastian and Kim Plainfield. Back in Louisiana he learned New Orleans music with Johnny Vidacovich.",
     "Today he lives in New Orleans and tours with dobro master Jerry Douglas, recording albums, TV commercials and film soundtracks between New Orleans and Nashville. He has played on more than a hundred albums, including sessions with Willie Nelson, Sonny Landreth, Dr. John, Anders Osborne, George Porter Jr. and Derek Trucks.",
     "He also hosted Street Beat: Drumming Below Sea Level, a documentary on the New Orleans drum sound, produced by Mid City Sound and Fire on the Bayou.",
-  ],
-  stats: [
-    { value: "100+", label: "Albums recorded" },
-    { value: "12", label: "Age he picked up drums" },
-    { value: "54 min", label: "Street Beat, hosted" },
   ],
 } as const;
