@@ -41,7 +41,7 @@ export function StreetBeatFeature() {
               </div>
             </div>
 
-            <div className="relative min-h-[240px] min-w-0 border-t border-border/40 md:border-l md:border-t-0">
+            <div className="relative min-h-[240px] min-w-0 border-t border-border/40 md:order-first md:border-r md:border-t-0">
               <Image
                 src={IMAGES.streetBeatPoster}
                 alt="Street Beat: Drumming Below Sea Level — film poster"
